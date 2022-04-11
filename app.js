@@ -36,7 +36,12 @@ guessBtn.addEventListener('click',function(){
 
     if ( isNaN(val) || ( val < min || val > max ) ) {
 
+        guessBtn.value = 'PLAY AGAIN';
+        guessInput.disabled = true;
+        guessBtn.className += 'play-again';
+        guessInput.style.borderColor = 'red';
         setMessage(`Please enter a number between ${min} and ${max}` , 'red');
+        return;
 
     }
 
